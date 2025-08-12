@@ -1,4 +1,14 @@
 #-------------------------------------------------------------------------------
+# Foliate (ePub reader)
+#
+# https://github.com/johnfactotum/foliate
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install foliate
+
+
+#-------------------------------------------------------------------------------
 # Signal Desktop
 #
 # Instructions from https://signal.org/download/linux/
