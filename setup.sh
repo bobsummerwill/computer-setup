@@ -1,4 +1,44 @@
 #-------------------------------------------------------------------------------
+# Git
+#
+# https://en.wikipedia.org/wiki/Git
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install git
+
+
+#-------------------------------------------------------------------------------
+# Docker
+#
+# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+#-------------------------------------------------------------------------------
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install \
+  ca-certificates \
+  curl
+
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io \
+  docker-buildx-plugin \
+  docker-compose-plugin
+
+#-------------------------------------------------------------------------------
 # Foliate (ePub reader)
 #
 # https://github.com/johnfactotum/foliate
@@ -26,22 +66,26 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
   sudo tee /etc/apt/sources.list.d/signal-xenial.list
 
 # 3. Update your package database and install Signal:
-sudo apt update && sudo apt install signal-desktop
+sudo apt update
+sudo apt install signal-desktop
 
 
 #-------------------------------------------------------------------------------
 # Visual Studio Code
 #
-# Instructions from https://phoenixnap.com/kb/install-vscode-ubuntu
+# Instructions from https://code.visualstudio.com/docs/setup/linux
 #-------------------------------------------------------------------------------
 
 sudo apt update
-sudo apt install software-properties-common apt-transport-https wget -y
+sudo apt install \
+  apt-transport-https \
+  gpg \
+  wget
 
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > ~/Downloads/packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 ~/Downloads/packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
-
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -D -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft.gpg
+rm -f microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 
 sudo apt update
 sudo apt install code
