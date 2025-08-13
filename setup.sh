@@ -49,6 +49,15 @@ sudo apt install foliate
 
 
 #-------------------------------------------------------------------------------
+# (Haskell) Stack
+#
+# Instructions from https://docs.haskellstack.org/en/stable/install_and_upgrade/
+#-------------------------------------------------------------------------------
+
+curl -sSL https://get.haskellstack.org/ | sh
+
+
+#-------------------------------------------------------------------------------
 # Signal Desktop
 #
 # Instructions from https://signal.org/download/linux/
@@ -89,3 +98,18 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] h
 
 sudo apt update
 sudo apt install code
+
+
+#-------------------------------------------------------------------------------
+# STRATO Mercata platform
+#
+# New instructions being constructed as we speak
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install \
+  libleveldb-dev \
+  liblzma-dev \
+  libsecp256k1-dev \
+  libsodium-dev \
+  postgresql
