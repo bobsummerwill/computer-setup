@@ -1,14 +1,4 @@
 #-------------------------------------------------------------------------------
-# Git
-#
-# https://en.wikipedia.org/wiki/Git
-#-------------------------------------------------------------------------------
-
-sudo apt update
-sudo apt install git
-
-
-#-------------------------------------------------------------------------------
 # Docker
 #
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
@@ -37,6 +27,16 @@ sudo apt-get install \
   containerd.io \
   docker-buildx-plugin \
   docker-compose-plugin
+
+#-------------------------------------------------------------------------------
+# Git
+#
+# https://en.wikipedia.org/wiki/Git
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install git
+
 
 #-------------------------------------------------------------------------------
 # Foliate (ePub reader)
