@@ -58,6 +58,16 @@ curl -sSL https://get.haskellstack.org/ | sh
 
 
 #-------------------------------------------------------------------------------
+# LibreOffice
+#
+# https://www.libreoffice.org/
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install libreoffice
+
+
+#-------------------------------------------------------------------------------
 # Signal Desktop
 #
 # Instructions from https://signal.org/download/linux/
@@ -77,6 +87,15 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 # 3. Update your package database and install Signal:
 sudo apt update
 sudo apt install signal-desktop
+
+
+#-------------------------------------------------------------------------------
+# Telegram Desktop
+#
+# Instructions from https://snapcraft.io/telegram-desktop
+#-------------------------------------------------------------------------------
+
+snap install telegram-desktop
 
 
 #-------------------------------------------------------------------------------
@@ -112,4 +131,4 @@ sudo apt install \
   liblzma-dev \
   libsecp256k1-dev \
   libsodium-dev \
-  postgresql
+  postgresql-client
