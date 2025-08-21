@@ -129,6 +129,18 @@ sudo apt update
 sudo apt install \
   libleveldb-dev \
   liblzma-dev \
+  libpq-dev \
   libsecp256k1-dev \
   libsodium-dev \
   postgresql-client
+
+
+#-------------------------------------------------------------------------------
+# Zoom
+#
+# support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063458
+#-------------------------------------------------------------------------------
+
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb
+rm ./zoom_amd64.deb
