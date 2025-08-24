@@ -1,4 +1,14 @@
 #-------------------------------------------------------------------------------
+# Balena Etcher
+#
+# https://phoenixnap.com/kb/etcher-ubuntu
+#-------------------------------------------------------------------------------
+curl -L -o ./balena-etcher_2.1.4_amd64.deb https://github.com/balena-io/etcher/releases/download/v2.1.4/balena-etcher_2.1.4_amd64.deb
+sudo apt install ./balena-etcher_2.1.4_amd64.deb
+rm balena-etcher_2.1.4_amd64.deb
+
+
+#-------------------------------------------------------------------------------
 # Docker
 #
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
@@ -117,22 +127,6 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] h
 
 sudo apt update
 sudo apt install code
-
-
-#-------------------------------------------------------------------------------
-# STRATO Mercata platform
-#
-# New instructions being constructed as we speak
-#-------------------------------------------------------------------------------
-
-sudo apt update
-sudo apt install \
-  libleveldb-dev \
-  liblzma-dev \
-  libpq-dev \
-  libsecp256k1-dev \
-  libsodium-dev \
-  postgresql-client
 
 
 #-------------------------------------------------------------------------------
