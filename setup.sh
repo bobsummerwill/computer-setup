@@ -130,6 +130,26 @@ sudo apt install code
 
 
 #-------------------------------------------------------------------------------
+# YubiKey Manager
+#
+# https://www.yubico.com/support/download/yubikey-manager/
+#-------------------------------------------------------------------------------
+
+# Download the latest Yubico Authenticator
+curl -L -o ~/Downloads/yubico-authenticator-latest-linux.tar.gz https://developers.yubico.com/yubioath-flutter/Releases/yubico-authenticator-latest-linux.tar.gz
+
+# Create the target directory and unpack
+mkdir -p ~/Projects/YubiKeyManager
+tar -xzf ~/Downloads/yubico-authenticator-latest-linux.tar.gz -C ~/Projects/YubiKeyManager --strip-components=1
+
+# Run desktop integration
+cd ~/Projects/YubiKeyManager && ./desktop_integration.sh --install
+
+# Clean up the downloaded archive
+rm ~/Downloads/yubico-authenticator-latest-linux.tar.gz
+
+
+#-------------------------------------------------------------------------------
 # Zoom
 #
 # support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063458
