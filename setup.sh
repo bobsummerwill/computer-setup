@@ -1,4 +1,31 @@
 #-------------------------------------------------------------------------------
+# Android Studio
+#
+# https://developer.android.com/studio
+#-------------------------------------------------------------------------------
+
+# Install dependencies
+sudo apt update
+sudo apt install -y wget unzip openjdk-17-jdk
+
+# Download Android Studio (update version as needed)
+wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.20/android-studio-2023.2.1.20-linux.tar.gz
+
+# Extract the archive
+tar -xzf android-studio-2023.2.1.20-linux.tar.gz
+
+# Move to /opt directory
+sudo mv android-studio /opt/
+
+# Clean up
+rm android-studio-2023.2.1.20-linux.tar.gz
+
+# (Optional) Start Android Studio
+# /opt/android-studio/bin/studio.sh
+
+# (Optional) To create a desktop entry, launch Android Studio and use Tools > Create Desktop Entry...
+
+#-------------------------------------------------------------------------------
 # Balena Etcher
 #
 # https://phoenixnap.com/kb/etcher-ubuntu
@@ -98,6 +125,11 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 sudo apt update
 sudo apt install signal-desktop
 
+
+#-------------------------------------------------------------------------------
+# Slack
+#-------------------------------------------------------------------------------
+sudo snap install slack
 
 #-------------------------------------------------------------------------------
 # Telegram Desktop
