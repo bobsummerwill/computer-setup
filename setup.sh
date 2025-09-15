@@ -95,26 +95,26 @@ curl -sSL https://get.haskellstack.org/ | sh
 
 
 #-------------------------------------------------------------------------------
+# IVPN
+#
+# https://www.ivpn.net/apps-linux/
+#-------------------------------------------------------------------------------
+
+# Add IVPN repository key
+curl -fsSL https://repo.ivpn.net/stable/ubuntu/generic.gpg | sudo gpg --dearmor -o /usr/share/keyrings/ivpn.gpg
+
+# Add IVPN repository
+echo "deb [signed-by=/usr/share/keyrings/ivpn.gpg] https://repo.ivpn.net/stable/ubuntu generic main" | sudo tee /etc/apt/sources.list.d/ivpn.list
+
+# Update package list and install IVPN
+sudo apt update
+sudo apt install ivpn-ui
+
+
+#-------------------------------------------------------------------------------
 # LibreOffice
 #
 # https://www.libreoffice.org/
-#-------------------------------------------------------------------------------
-
-sudo apt update
-sudo apt install libreoffice
-
-
-#-------------------------------------------------------------------------------
-# Signal Desktop
-#
-# Instructions from https://signal.org/download/linux/
-#-------------------------------------------------------------------------------
-
-# NOTE: These instructions only work for 64-bit Debian-based
-# Linux distributions such as Ubuntu, Mint etc.
-
-# 1. Install our official public software signing key:
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > ~/Downloads/signal-desktop-keyring.gpg;
 cat ~/Downloads/signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 
 # 2. Add our repository to your list of repositories:
