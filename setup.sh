@@ -25,6 +25,7 @@ rm android-studio-2023.2.1.20-linux.tar.gz
 
 # (Optional) To create a desktop entry, launch Android Studio and use Tools > Create Desktop Entry...
 
+
 #-------------------------------------------------------------------------------
 # Balena Etcher
 #
@@ -65,12 +66,14 @@ sudo apt-get install \
   docker-buildx-plugin \
   docker-compose-plugin
 
+
 #-------------------------------------------------------------------------------
 # Discord
 #
 # https://snapcraft.io/discord
 #-------------------------------------------------------------------------------
 sudo snap install discord
+
 
 #-------------------------------------------------------------------------------
 # Git
@@ -93,12 +96,21 @@ sudo apt install foliate
 
 
 #-------------------------------------------------------------------------------
-# (Haskell) Stack
-#
-# Instructions from https://docs.haskellstack.org/en/stable/install_and_upgrade/
+# NVM (Node Version Manager) and then node.js
 #-------------------------------------------------------------------------------
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 
-curl -sSL https://get.haskellstack.org/ | sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm install node
+
+
+#-------------------------------------------------------------------------------
+# And then https://cline.bot Cline CLI
+#-------------------------------------------------------------------------------
+npm install -g cline
 
 
 #-------------------------------------------------------------------------------
@@ -122,21 +134,33 @@ sudo apt install ivpn-ui
 # LibreOffice
 #
 # https://www.libreoffice.org/
-cat ~/Downloads/signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+#-------------------------------------------------------------------------------
 
-# 2. Add our repository to your list of repositories:
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\
-  sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo apt install libreoffice
 
-# 3. Update your package database and install Signal:
-sudo apt update
-sudo apt install signal-desktop
+
+#-------------------------------------------------------------------------------
+# Signal
+#
+# https://signal.org/download/linux/
+#-------------------------------------------------------------------------------
+sudo snap install signal-desktop
 
 
 #-------------------------------------------------------------------------------
 # Slack
 #-------------------------------------------------------------------------------
 sudo snap install slack
+
+
+#-------------------------------------------------------------------------------
+# (Haskell) Stack
+#
+# Instructions from https://docs.haskellstack.org/en/stable/install_and_upgrade/
+#-------------------------------------------------------------------------------
+
+curl -sSL https://get.haskellstack.org/ | sh
+
 
 #-------------------------------------------------------------------------------
 # Telegram Desktop
