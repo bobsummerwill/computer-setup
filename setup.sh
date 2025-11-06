@@ -145,7 +145,7 @@ sudo apt install libreoffice
 # https://bundler.io/
 #-------------------------------------------------------------------------------
 
-sudio apt install ruby-bundler
+gem install bundler
 
 
 #-------------------------------------------------------------------------------
