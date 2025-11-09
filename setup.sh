@@ -211,6 +211,16 @@ sudo apt install code
 
 
 #-------------------------------------------------------------------------------
+# VLC Media Player
+#
+# https://www.videolan.org/vlc/
+#-------------------------------------------------------------------------------
+
+sudo apt update
+sudo apt install vlc
+
+
+#-------------------------------------------------------------------------------
 # YubiKey Manager
 #
 # https://www.yubico.com/support/download/yubikey-manager/
